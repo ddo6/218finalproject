@@ -5,7 +5,7 @@
 <head>
     <title>SportsPro Technical Support</title>
     <link rel="stylesheet" type="text/css"
-          href="/project_start/tech_support/main.css">
+          href="/~ddo6/218finalproject/main.css">
 </head>
 
 <!-- the body section -->
