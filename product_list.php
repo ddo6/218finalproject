@@ -12,7 +12,7 @@
                 <th>Release Date</th>
                 <th>&nbsp;</th>
             </tr>
-            <?php foreach ($products as $product) : ?>
+            <?php foreach (products as $product) : ?>
             <tr>
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['name']; ?></td>
@@ -30,7 +30,7 @@
             </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="?action=show_add_form">Add Product</a></p>       
+             
     </div>
 </main>
 <?php include 'view/footer.php'; ?>
