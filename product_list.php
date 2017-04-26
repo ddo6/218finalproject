@@ -30,7 +30,7 @@
             </tr>
             <?php endforeach; ?>
         </table>
-             
+         <p><a href="?action=show_add_form">Add Product</a></p>    
     </div>
 </main>
 <?php include 'view/footer.php'; ?>
