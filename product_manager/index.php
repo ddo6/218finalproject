@@ -14,7 +14,7 @@ if ($action == 'list_products') {
     // Get product data
     $products = get_products();
     // Display the product list
-    include('product_list.php');
+    include('../model/product_list.php');
     
 } else if ($action == 'delete_product') {
     $product_code = $_POST['product_code'];
@@ -22,7 +22,7 @@ if ($action == 'list_products') {
     header("Location: .");
     
 } else if ($action == 'show_add_form') {
-    include('product_add.php');
+    include('../model/product_add.php');
     
 } else if ($action == 'add_product') {
     $code = $_POST['code'];
