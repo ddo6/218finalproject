@@ -26,8 +26,18 @@
             <label>Postal Code:</label>
             <input type="text" name="postal_code" value="<?php echo $customer['postalCode']; ?>" /><br />
 
-            <label>Country Code:</label>
-            <input type="text" name="country_code" value="<?php echo $customer['countryCode']; ?>" /><br />
+             <label>Country Code:</label>
+                <select name="country">
+                <?php foreach ($countries as $country) : ?>
+                <option value="<?php echo $country['countryCode'];?>" 
+                <?php if($country['countryCode']===$customer['countryCode']) {
+                    echo "selected='selected'";
+                  }
+            ?>>
+                     <?php echo $country['countryName']; ?>
+            </option>
+            <?php endforeach; ?>
+            </select><br />
 
             <label>Phone:</label>
             <input type="text" name="phone" value="<?php echo $customer['phone']; ?>" /><br />
