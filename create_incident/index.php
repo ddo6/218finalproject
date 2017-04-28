@@ -17,7 +17,7 @@ else
 }
 if ($action == 'display_customer_get') 
 {
-    include('customer_get.php');
+    include('get_customer.php');
 } 
 else if ($action == 'get_customer') 
 {
