@@ -2,7 +2,7 @@
 require('../model/database.php');
 require('../model/customer_db.php');
 require('../model/product_db.php');
-require('../model/registration_db.php');
+require('../model/prod_register.php');
 
 if (isset($_POST['action'])) 
 {
