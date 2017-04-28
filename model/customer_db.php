@@ -1,4 +1,5 @@
 <?php
+//Function to get all customers
 function get_customers() {
     global $db;
     $query = 'SELECT * FROM customers
@@ -6,6 +7,8 @@ function get_customers() {
     $customers = $db->query($query);
     return $customers;
 }
+
+//Function to search customers by last name
 function get_customers_by_last_name($last_name) {
     global $db;
     $query = "SELECT * FROM customers
@@ -14,6 +17,8 @@ function get_customers_by_last_name($last_name) {
     $customers = $db->query($query);
     return $customers;
 }
+
+//Get customers by customer ID
 function get_customer($customer_id) {
     global $db;
     $query = "SELECT * FROM customers
@@ -22,6 +27,8 @@ function get_customer($customer_id) {
     $customer = $customer->fetch();
     return $customer;
 }
+
+//Function to search customers by email
 function get_customer_by_email($email) {
     global $db;
     $query = "SELECT * FROM customers
@@ -30,12 +37,16 @@ function get_customer_by_email($email) {
     $customer = $customer->fetch();
     return $customer;
 }
+
+//Function to delete customers using customer ID
 function delete_customer($customer_id) {
     global $db;
     $query = "DELETE FROM customers
               WHERE customerID = '$customer_id'";
     $db->exec($query);
 }
+
+//Function to add a new customer
 function add_customer($first_name, $last_name, 
         $address, $city, $state, $postal_code, $country_code,
         $phone, $email, $password) {
@@ -50,6 +61,8 @@ function add_customer($first_name, $last_name,
                   '$phone', '$email', '$password')";
     $db->exec($query);
 }
+
+//Function to update customer information
 function update_customer($customer_id, $first_name, $last_name,
         $address, $city, $state, $postal_code, $country_code,
         $phone, $email, $password) {
