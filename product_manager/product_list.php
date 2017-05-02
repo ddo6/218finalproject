@@ -1,9 +1,8 @@
-<?php include '../view/header.php'; ?>
-<div id="main">
-
+<?php include '../../view/header.php'; ?>
+<main>
     <h1>Product List</h1>
 
-    <div id="content">
+    <div id="main">
         <!-- display a table of products -->
         <table>
             <tr>
@@ -18,19 +17,20 @@
                 <td><?php echo $product['productCode']; ?></td>
                 <td><?php echo $product['name']; ?></td>
                 <td><?php echo $product['version']; ?></td>
-                <td><?php echo $product['releaseDate']; ?></td>
-                <td><form action="." method="post">
+                <td><?php $date = new DateTime($product['releaseDate']); 
+                     echo $date->format('m-d-Y'); ?></td>
+                <!-- delete the product -->
+                <td><form action="" method="post">
                     <input type="hidden" name="action"
-                           value="delete_product" />
-                    <input type="hidden" name="product_code"
-                           value="<?php echo $product['productCode']; ?>" />
-                    <input type="submit" value="Delete" />
+                           value="delete_product">
+                    <input type="hidden" name="code"
+                           value="<?php echo $product['productCode']; ?>">
+                    <input type="submit" value="Delete">
                 </form></td>
             </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="?action=show_add_form">Add Product</a></p>
+        <p><a href="?action=show_add_form">Add Product</a></p>       
     </div>
-
-</div>
-<?php include '../view/footer.php'; ?>
+</main>
+<?php include '../../view/footer.php'; ?>
